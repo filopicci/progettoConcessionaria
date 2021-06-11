@@ -38,6 +38,13 @@ public class BootstrapData implements CommandLineRunner {
         c2.setCitta("Roma");
         c2.setRegione(Regione.LAZIO);
 
+        Concessionario c3 = new Concessionario();
+        c3.setNome("concessionario 3");
+        c3.setVia("via Brescia");
+        c3.setCitta("Brescia");
+        c3.setRegione(Regione.LOMBARDIA);
+
+
         Auto a1 = new Auto();
         a1.setModello("Fiat panda");
         a1.setConcessionario(c1);
@@ -47,6 +54,11 @@ public class BootstrapData implements CommandLineRunner {
         a2.setModello("Audi A2");
         a2.setConcessionario(c2);
         a2.setPrezzo((double) 30000);
+
+        Auto a3 = new Auto();
+        a3.setModello("BMW x6");
+        a3.setConcessionario(c3);
+        a3.setPrezzo((double) 80000);
 
         Dipendente d1 = new Dipendente();
         d1.setNome("Mario");
@@ -62,18 +74,30 @@ public class BootstrapData implements CommandLineRunner {
         d2.setConcessionario(c2);
         d2.setStipendio((double) 1550);
 
+        Dipendente d3 = new Dipendente();
+        d3.setNome("Stefano");
+        d3.setCognome("Verdi");
+        d3.setEta(38);
+        d3.setConcessionario(c3);
+        d3.setStipendio((double) 1800);
+
         c1.getListadipendenti().add(d1);
         c1.getListaauto().add(a1);
         c2.getListadipendenti().add(d2);
         c2.getListaauto().add(a2);
+        c3.getListadipendenti().add(d3);
+        c3.getListaauto().add(a3);
 
         concessionarioRepository.save(c1);
         concessionarioRepository.save(c2);
+        concessionarioRepository.save(c3);
 
         autoRepository.save(a1);
         autoRepository.save(a2);
+        autoRepository.save(a3);
 
         dipendenterepository.save(d1);
         dipendenterepository.save(d2);
+        dipendenterepository.save(d3);
     }
 }

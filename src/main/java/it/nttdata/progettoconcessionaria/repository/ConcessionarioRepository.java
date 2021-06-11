@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ConcessionarioRepository extends CrudRepository<Concessionario, Long> {
 
-    @Query("SELECT distinct count(C.regione) from Concessionario C")
+    @Query("SELECT count(distinct C.regione) from Concessionario C")
     Integer countRegion();
 }
