@@ -26,14 +26,14 @@ public class Concessionario {
     private Regione regione;
 
     @OneToMany(mappedBy = "concessionario")
-    private Set<Dipendente> listadipendenti;
+    private Set<Dipendente> listadipendenti = new HashSet<>();
 
     @OneToMany(mappedBy = "concessionario")
-    private Set<Auto> listaauto;
+    private Set<Auto> listaauto = new HashSet<>();
 
     public Concessionario(){}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
