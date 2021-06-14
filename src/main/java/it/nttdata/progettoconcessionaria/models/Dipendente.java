@@ -1,6 +1,9 @@
 package it.nttdata.progettoconcessionaria.models;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
@@ -8,6 +11,9 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Dipendente {
 
     @Id
@@ -32,54 +38,4 @@ public class Dipendente {
     @NonNull
     @Min(18)
     private Integer eta;
-
-    public Dipendente (){}
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Concessionario getConcessionario() {
-        return concessionario;
-    }
-
-    public void setConcessionario(Concessionario concessionario) {
-        this.concessionario = concessionario;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCognome() {
-        return cognome;
-    }
-
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
-    }
-
-    public Double getStipendio() {
-        return stipendio;
-    }
-
-    public void setStipendio(Double stipendio) {
-        this.stipendio = stipendio;
-    }
-
-    public Integer getEta() {
-        return eta;
-    }
-
-    public void setEta(Integer eta) {
-        this.eta = eta;
-    }
 }

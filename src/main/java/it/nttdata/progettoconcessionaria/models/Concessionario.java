@@ -1,5 +1,8 @@
 package it.nttdata.progettoconcessionaria.models;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
@@ -8,6 +11,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Concessionario {
 
     @Id
@@ -24,68 +30,12 @@ public class Concessionario {
     private String citta;
     @NonNull
     private Regione regione;
+    @NonNull
+    private String descrizione;
 
     @OneToMany(mappedBy = "concessionario")
     private Set<Dipendente> listadipendenti = new HashSet<>();
 
     @OneToMany(mappedBy = "concessionario")
     private Set<Auto> listaauto = new HashSet<>();
-
-    public Concessionario(){}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getVia() {
-        return via;
-    }
-
-    public void setVia(String via) {
-        this.via = via;
-    }
-
-    public String getCitta() {
-        return citta;
-    }
-
-    public void setCitta(String citta) {
-        this.citta = citta;
-    }
-
-    public Regione getRegione() {
-        return regione;
-    }
-
-    public void setRegione(Regione regione) {
-        this.regione = regione;
-    }
-
-    public Set<Dipendente> getListadipendenti() {
-        return listadipendenti;
-    }
-
-    public void setListadipendenti(Set<Dipendente> listadipendenti) {
-        this.listadipendenti = listadipendenti;
-    }
-
-    public Set<Auto> getListaauto() {
-        return listaauto;
-    }
-
-    public void setListaauto(Set<Auto> listaauto) {
-        this.listaauto = listaauto;
-    }
 }

@@ -31,19 +31,21 @@ public class BootstrapData implements CommandLineRunner {
         c1.setVia("via Milano");
         c1.setCitta("Milano");
         c1.setRegione(Regione.LOMBARDIA);
+        c1.setDescrizione("la concessionaria 1 viene descritta qui");
 
         Concessionario c2 = new Concessionario();
         c2.setNome("concessionario 2");
         c2.setVia("via Roma");
         c2.setCitta("Roma");
         c2.setRegione(Regione.LAZIO);
+        c2.setDescrizione("la concessionaria 2 viene descritta qui");
 
         Concessionario c3 = new Concessionario();
         c3.setNome("concessionario 3");
         c3.setVia("via Brescia");
         c3.setCitta("Brescia");
         c3.setRegione(Regione.LOMBARDIA);
-
+        c3.setDescrizione("la concessionaria 3 viene descritta qui");
 
         Auto a1 = new Auto();
         a1.setModello("Fiat panda");
