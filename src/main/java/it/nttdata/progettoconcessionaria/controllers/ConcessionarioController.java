@@ -1,11 +1,13 @@
 package it.nttdata.progettoconcessionaria.controllers;
 
 import it.nttdata.progettoconcessionaria.models.Concessionario;
+import it.nttdata.progettoconcessionaria.models.Regione;
 import it.nttdata.progettoconcessionaria.repository.ConcessionarioRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Optional;
 
@@ -40,5 +42,17 @@ public class ConcessionarioController {
         }
 
         return "dettaglioconcessionario";
+    }
+
+    @GetMapping("/addconcessionario")
+    public String getFormConcessionario(Model model){
+        model.addAttribute("regioni", Regione.values());
+        return "formconcessionario";
+    }
+
+    @PostMapping("/addconcessionario")
+    public String addConcessionario(Concessionario concessionario){
+        concessionarioRepository.save(concessionario);
+        return "redirect:/listaconcessionarie";
     }
 }
