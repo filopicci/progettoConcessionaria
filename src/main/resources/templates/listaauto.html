@@ -43,7 +43,7 @@
     <tr th:each="automobile : ${automobili}">
         <th scope="row" th:text="${automobile.modello}">1</th>
         <td th:text="${automobile.prezzo}">Mark</td>
-        <td th:text="${automobile.concessionario.getNome()}">Otto</td>
+        <td><a th:text="${automobile.concessionario.getNome()}" th:href="${automobile.concessionario.getUrlDettaglio()}">Otto</a></td>
     </tr>
     </tbody>
 </table>

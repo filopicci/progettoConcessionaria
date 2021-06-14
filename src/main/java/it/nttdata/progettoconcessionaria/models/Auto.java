@@ -16,7 +16,7 @@ public class Auto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     @NonNull
     @Size(min = 1)
     private String modello;

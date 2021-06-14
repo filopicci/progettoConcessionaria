@@ -18,7 +18,7 @@ public class Concessionario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     @NonNull
     @Size(min = 1)
     private String nome;
@@ -38,4 +38,8 @@ public class Concessionario {
 
     @OneToMany(mappedBy = "concessionario")
     private Set<Auto> listaauto = new HashSet<>();
+
+    public String getUrlDettaglio(){
+        return "/concessionario/"+id.toString();
+    }
 }
